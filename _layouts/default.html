@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.lang }}">
 
   {% include head.html %}
 
   <body>
+    <div class="mdl-layout mdl-js-layout">
 
     {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
+      <main class="mdl-layout__content">
         {{ content }}
-      </div>
+      </main>
     </div>
 
     {% include footer.html %}

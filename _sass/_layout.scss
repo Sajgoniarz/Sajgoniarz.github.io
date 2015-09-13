@@ -1,4 +1,47 @@
 /**
+* Body
+**/
+body::before {
+    background-image: url('../images/BG.png');
+    background-size: cover;
+    background-attachment: fixed;
+    content: '';
+    will-change: transform;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+}
+
+.post-container {
+    max-width: 900px;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-shrink: 0;
+}
+/**
+* Drawer
+**/
+.drawer-header {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+.drawer-avatar {
+    border-radius: 50%;
+    width: 100px;
+    align-self: center;
+}
+.drawer-username {
+    text-align: center;
+    padding: 5px 0;
+}
+
+/**
  * Site header
  */
 .site-header {
