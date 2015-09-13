@@ -8,11 +8,13 @@
 
     {% include header.html %}
       <main class="mdl-layout__content">
+        <div class="mdl-grid main-container">
         {{ content }}
+        </div>
+        {% include footer.html %}
       </main>
     </div>
 
-    {% include footer.html %}
 
   </body>
 

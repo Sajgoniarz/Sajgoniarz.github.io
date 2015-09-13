@@ -16,6 +16,7 @@ pagelist:
  - title: Blog
    icon: home
    link: /
-
+paginate: 6
+paginate_path: /:num/
 # Build settings
 markdown: kramdown

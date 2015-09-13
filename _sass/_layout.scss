@@ -15,17 +15,10 @@ body::before {
     position: fixed;
 }
 
-.post-container {
-    max-width: 900px;
-    padding: 0;
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    flex-shrink: 0;
-}
 /**
 * Drawer
 **/
+
 .drawer-header {
     display: flex;
     flex-direction: column;
@@ -38,9 +31,93 @@ body::before {
 }
 .drawer-username {
     text-align: center;
+    font-weight: 400;
     padding: 5px 0;
 }
+/**
+* Blog
+**/
+.main-container {
+    max-width: 900px;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-shrink: 0;
 
+    .mdl-card__media {
+        box-sizing: border-box;
+        background-size: cover;
+        padding: 24px;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row;
+        align-items: flex-end;
+        cursor: pointer
+    }
+}
+.post {
+
+    .mdl-card__supporting-text:not(:last-child) {
+        box-sizing: border-box;
+        min-height: 70px;
+    }
+    .mdl-card__supporting-text {
+        width: 100%;
+        padding: 16px;
+        min-height: 64px;
+        display: flex;
+        align-items: center;
+       box-sizing: border-box;
+    }
+    .mdl-card__supporting-text:last-child {
+        flex-direction: column;
+        padding: 15px 70px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+.mdl-card__actions {
+    padding: 10px;
+    font-weight: 300;
+    font-size: 14px;
+}
+.blog-pagination-nav {
+    margin: 12px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFF;
+    font-weight: 500;
+    position: relative;
+
+    a {
+        color: #FFF;
+        text-decoration: none
+    }
+
+    button {
+        background-color: #FFF;
+        color: rgba(0, 0, 0, 0.54);
+    }
+    button.prev {
+        margin-right: 16px;
+    }
+
+    button.next {
+        margin-left: 16px;
+    }
+
+    .paginator-counter {
+        position: absolute;
+        left: calc(50% - 10px);
+    }
+
+
+}
 /**
  * Site header
  */

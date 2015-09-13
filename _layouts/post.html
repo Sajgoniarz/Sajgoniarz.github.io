@@ -1,14 +1,22 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  <header class="mdl-card__media mdl-color-text--grey-50">
+    <h3>{{ page.title }}</h3>
   </header>
-
-  <article class="post-content">
+  <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+    <div>
+      <span>{{ page.date | date: "%-d %b, %Y" }}</span>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+    <div>
+      <i class="material-icons" role="presentation">share</i>
+      <span class="visuallyhidden">share</span>
+    </div>
+  </div>
+  <article class="mdl-color-text--grey-700 mdl-card__supporting-text">
     {{ content }}
   </article>
 
