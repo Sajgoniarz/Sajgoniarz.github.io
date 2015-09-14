@@ -18,21 +18,40 @@ body::before {
 /**
 * Drawer
 **/
+.mdl-layout__drawer {
+    .drawer-header {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+    .drawer-avatar {
+        border-radius: 50%;
+        width: 100px;
+        align-self: center;
+    }
+    .drawer-username {
+        text-align: center;
+        font-weight: 400;
+        padding: 5px 0;
+    }
+    nav.mdl-navigation {
+        a.mdl-navigation__link {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-weight: 500;
+            text-decoration: none;
 
-.drawer-header {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-}
-.drawer-avatar {
-    border-radius: 50%;
-    width: 100px;
-    align-self: center;
-}
-.drawer-username {
-    text-align: center;
-    font-weight: 400;
-    padding: 5px 0;
+            i.material-icons {
+                font-size: 24px;
+                margin-right: 32px;
+            }
+            
+            &:hover {
+                background: #18ffff;
+            }
+        }
+    }
 }
 /**
 * Blog
@@ -58,22 +77,25 @@ body::before {
 }
 .post {
 
-    .mdl-card__supporting-text:not(:last-child) {
-        box-sizing: border-box;
-        min-height: 70px;
-    }
     .mdl-card__supporting-text {
         width: 100%;
         padding: 16px;
         min-height: 64px;
         display: flex;
         align-items: center;
-       box-sizing: border-box;
+        box-sizing: border-box;
+
+        &:not(:last-child) {
+            box-sizing: border-box;
+            min-height: 70px;
+        }
+
+        &:last-child {
+            flex-direction: column;
+            padding: 15px 70px;
+        }
     }
-    .mdl-card__supporting-text:last-child {
-        flex-direction: column;
-        padding: 15px 70px;
-    }
+
     p {
         font-size: 16px;
         line-height: 28px;
@@ -102,18 +124,20 @@ body::before {
     button {
         background-color: #FFF;
         color: rgba(0, 0, 0, 0.54);
-    }
-    button.prev {
-        margin-right: 16px;
-    }
 
-    button.next {
-        margin-left: 16px;
+        &.prev {
+            margin-right: 16px;
+        }
+
+        &.next {
+            margin-left: 16px;
+        }
     }
 
     .paginator-counter {
         position: absolute;
-        left: calc(50% - 10px);
+        left: 50%;
+        transform: translateX(-50%);
     }
 
 
@@ -137,7 +161,6 @@ body::before {
     margin-bottom: 0;
     float: left;
 
-    &,
     &:visited {
         color: $grey-color-dark;
     }

@@ -12,8 +12,8 @@
   </header>
   <nav class="mdl-navigation">
     {% for page in site.pagelist %}
-    <a class="mdl-navigation__link" href="{{ page.link }}">
-      <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">{{ page.icon }}</i>{{ page.title }}
+    <a class="mdl-navigation__link mdl-color-text--blue-grey-400" href="{{ page.link }}">
+      <i class="material-icons" role="presentation">{{ page.icon }}</i>{{ page.title }}
     </a>
     {% endfor %}
   </nav>
