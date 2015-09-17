@@ -1,0 +1,25 @@
+---
+layout: default
+permalink: /courses/
+---
+{% for course in site.courses %}
+<div class="mdl-grid mdl-cell--12-col course-list mdl-color--{{ course.list-bg-color }} mdl-color-text--{{ course.list-font-color}}">
+        <div class="mdl-cell mdl-cell--6-col">
+            <div class="mdl-color--{{ course.list-icon-bg-color }}">
+                <img class="" role="presentation" src="../images/{{ course.img }}"/>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col">
+            {% for category in site.categories %}
+                {% if category[0] == course.category %}
+                    {% assign ordered_posts = category[1] | sort "index" %}
+            <nav>
+                    {% for lesson in ordered_posts %}
+                <a href="{{ lesson.url | prepend: site.basurl }}">{{ lesson.title }}</a>
+                    {% endfor %}
+            </nav>
+                {% endif %}
+            {% endfor %}
+        </div>
+</div>
+{% endfor %}

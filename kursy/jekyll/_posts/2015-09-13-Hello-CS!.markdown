@@ -1,0 +1,8 @@
+---
+layout: post
+title: Hello CS!
+date: 2015-09-13 16:34
+index: 1
+---
+
+Witaj w świecie CS!

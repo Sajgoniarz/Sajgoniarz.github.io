@@ -1,14 +1,49 @@
 ---
 layout: default
 ---
+{% if page.categories contains 'blog' %}
+  {% assign bg-color = site.post-default-header-bg-color %}
+  {% assign font-color = site.post-default-header-text-color %}
+{% else %}
+  {% for course in site.courses %}
+    {% if page.categories contains course.category %}
+      {% assign bg-color = course.list-bg-color %}
+      {% assign font-color = course.list-icon-bg-color %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% for category in site.categories %}
+    {% if category[0] == page.categories[1] %}
+      {% assign ordered_posts = category[1] | sort: "index" %}
+      {% for post in ordered_posts %}
+        {% if post.title == page.title %}
+          {% assign current_lesson_index = forloop.index %}
+          {% assign total_lessons_number = forloop.length %}
+          {% if forloop.first == false %}
+            {% assign indeks = forloop.index0 | minus: 1 %}
+            {% assign previous_post = ordered_posts[indeks] %}
+          {% endif %}
+          {% if forloop.last == false %}
+            {% assign indeks = forloop.index0 | plus: 1 %}
+            {% assign next_post = ordered_posts[indeks] %}
+          {% endif %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{{ paginator }}
 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col post">
 
-  <header class="mdl-card__media mdl-color-text--teal-300 mdl-color--blue-grey-800">
+  <header class="mdl-card__media mdl-color-text--{{ font-color }} mdl-color--{{ bg-color }}">
     <h3>{{ page.title }}</h3>
   </header>
   <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
     <div>
-      <span>{{ page.date | date: "%-d %b, %Y" }}</span>
+      <span>{% include showTranslatedDateLong.html %}</span>
     </div>
     <div class="mdl-layout-spacer"></div>
     <div>
@@ -19,5 +54,26 @@ layout: default
   <article class="mdl-color-text--grey-700 mdl-card__supporting-text">
     {{ content }}
   </article>
-
 </div>
+
+{% if next_post != null or previous_post != null %}
+<nav class="blog-pagination-nav mdl-cell mdl-cell--12-col">
+  {% if previous_post != null %}
+  <a href="{{ previous_post.url | prepend: site.baseurl }}">
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon prev">
+      <i class="material-icons" role="presentation">arrow_backward</i>
+    </button>
+    {{ previous_post.title }}
+  </a>
+  {% endif %}
+  <div class="paginator-counter"> {{ current_lesson_index }}/{{ total_lessons_number }}</div>
+  {% if next_post != null %}
+  <a href="{{ next_post.url | prepend: site.baseurl }}">
+    {{ next_post.title }}
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon next">
+      <i class="material-icons" role="presentation">arrow_forward</i>
+    </button>
+  </a>
+  {% endif %}
+</nav>
+{% endif %}
