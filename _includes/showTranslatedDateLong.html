@@ -1,17 +1,17 @@
 {% assign m = page.date | date: "%-m" %}
 {{ page.date | date: "%-d" }}
 {% case m %}
-    {% when '1' %}Styczeń
-    {% when '2' %}Luty
-    {% when '3' %}Marzec
-    {% when '4' %}Kwiecień
-    {% when '5' %}Maj
-    {% when '6' %}Czerwiec
-    {% when '7' %}Lipiec
-    {% when '8' %}Sierpień
-    {% when '9' %}Wrzesień
-    {% when '10' %}Październik
-    {% when '11' %}Listopad
-    {% when '12' %}Grudzień
+    {% when '1' %}{% if site.translations.january %}{{ site.translations.january }}{% else %}January{% endif %}
+    {% when '2' %}{% if site.translations.february %}{{ site.translations.february }}{% else %}February{% endif %}
+    {% when '3' %}{% if site.translations.march %}{{ site.translations.march }}{% else %}March{% endif %}
+    {% when '4' %}{% if site.translations.april %}{{ site.translations.april }}{% else %}April{% endif %}
+    {% when '5' %}{% if site.translations.may %}{{ site.translations.may }}{% else %}May{% endif %}
+    {% when '6' %}{% if site.translations.june %}{{ site.translations.june }}{% else %}June{% endif %}
+    {% when '7' %}{% if site.translations.july %}{{ site.translations.july }}{% else %}July{% endif %}
+    {% when '8' %}{% if site.translations.august %}{{ site.translations.august }}{% else %}August{% endif %}
+    {% when '9' %}{% if site.translations.september %}{{ site.translations.september }}{% else %}September{% endif %}
+    {% when '10' %}{% if site.translations.october  %}{{ site.translations.october }}{% else %}October{% endif %}
+    {% when '11' %}{% if site.translations.november %}{{ site.translations.november }}{% else %}November{% endif %}
+    {% when '12' %}{% if site.translations.december %}{{ site.translations.december }}{% else %}December{% endif %}
 {% endcase %}
 {{ page.date | date: "%Y" }}

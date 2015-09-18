@@ -3,44 +3,54 @@
 
     <div class="mdl-mega-footer__drop-down-section">
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">Author</h1>
+      <h1 class="mdl-mega-footer__heading">{% if site.translations.author %}{{ site.translations.author }}{% else %} Author {% endif %}</h1>
       <ul class="mdl-mega-footer__link-list">
-        <li><span>{{ site.author }}</span></li>
-        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><span>{{ site.social_info.author }}</span></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.social_info.email }}</a></li>
         <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe via RSS</a></li>
-        <li><span>2015</span></li>
+        <li><span>@2015 {{ site.title }}</span></li>
       </ul>
     </div>
 
+    {% if site.social_info.facebook_link or site.social_info.twitter_link or site.social_info.linkedin_link or site.social_info.github_link %}
     <div class="mdl-mega-footer__drop-down-section">
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">My Profiles</h1>
+      <h1 class="mdl-mega-footer__heading">{% if site.translations.my_profiles %}{{ site.translations.my_profiles }}{% else %} My Profiles {% endif %}</h1>
       <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">
+        {% if site.social_info.facebook_link %}
+        <li><a href="{{ site.social_info.facebook_link }}" target="_blank">
             <i class="mdi mdi-facebook-box"></i>
-            Facebook
+            {{ site.social_info.facebook_link | split: '/' | last}}
           </a></li>
-        <li><a href="#">
+        {% endif %}
+        {% if site.social_info.twitter_link %}
+        <li><a href="{{ site.social_info.twitter_link }}" target="_blank">
             <i class="mdi mdi-twitter-box"></i>
-            Twitter
+          {{ site.social_info.twitter_link | split: '/' | last}}
           </a></li>
-        <li><a href="#">
+        {% endif %}
+        {% if site.social_info.linkedin_link %}
+        <li><a href="{{ site.social_info.linkedin_link }}" target="_blank">
           <i class="mdi mdi-linkedin-box"></i>
-          LinkedIn
+          {{ site.social_info.linkedin_link | split: '/' | last}}
         </a></li>
-        <li><a>
+        {% endif %}
+        {% if site.social_info.github_link %}
+        <li><a href="{{ site.social_info.github_link }}" target="_blank">
           <i class="mdi mdi-github-box"></i>
-          Github
+          {{ site.social_info.github_link | split: '/' | last}}
         </a></li>
+        {% endif %}
       </ul>
     </div>
+    {% endif %}
 
     <div class="mdl-mega-footer__drop-down-section">
       <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">About</h1>
-      <p>
+      <h1 class="mdl-mega-footer__heading">{% if site.translations.about %}{{ site.translations.about }}{% else %} About {% endif %}</h1>
+      <ul class="mdl-mega-footer__link-list">
         {{ site.description }}
-      </p>
+      </ul>
     </div>
   </div>
 </footer>

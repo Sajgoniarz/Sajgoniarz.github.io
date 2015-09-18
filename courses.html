@@ -3,9 +3,9 @@ layout: default
 permalink: /courses/
 ---
 {% for course in site.courses %}
-<div class="mdl-grid mdl-cell--12-col course-list mdl-color--{{ course.list-bg-color }} mdl-color-text--{{ course.list-font-color}}">
+<div class="mdl-grid mdl-cell--12-col course-list mdl-color--{{ course.section-bg-color }} mdl-color-text--{{ course.list-font-color}}">
         <div class="mdl-cell mdl-cell--6-col">
-            <div class="mdl-color--{{ course.list-icon-bg-color }}">
+            <div class="mdl-color--{{ course.icon-bg-color }} mdl-shadow--6dp">
                 <img class="" role="presentation" src="../images/{{ course.img }}"/>
             </div>
         </div>

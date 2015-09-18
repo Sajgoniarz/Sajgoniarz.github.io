@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-{% if page.categories contains 'blog' %}
-  {% assign bg-color = site.post-default-header-bg-color %}
-  {% assign font-color = site.post-default-header-text-color %}
+{% if page.categories contains 'blog' or page.categories == null %}
+  {% assign bg_color = site.blog-header-bg-color %}
+  {% assign font_color = site.blog-header-text-color %}
 {% else %}
   {% for course in site.courses %}
     {% if page.categories contains course.category %}
-      {% assign bg-color = course.list-bg-color %}
-      {% assign font-color = course.list-icon-bg-color %}
+      {% assign bg_color = course.section-bg-color %}
+      {% assign font_color = course.icon-bg-color %}
       {% break %}
     {% endif %}
   {% endfor %}
@@ -18,7 +18,7 @@ layout: default
       {% assign ordered_posts = category[1] | sort: "index" %}
       {% for post in ordered_posts %}
         {% if post.title == page.title %}
-          {% assign current_lesson_index = forloop.index %}
+          {% assign current_index = forloop.index %}
           {% assign total_lessons_number = forloop.length %}
           {% if forloop.first == false %}
             {% assign indeks = forloop.index0 | minus: 1 %}
@@ -35,10 +35,9 @@ layout: default
   {% endfor %}
 {% endif %}
 
-{{ paginator }}
 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col post">
 
-  <header class="mdl-card__media mdl-color-text--{{ font-color }} mdl-color--{{ bg-color }}">
+  <header class="mdl-card__media mdl-color-text--{{ font_color }} mdl-color--{{ bg_color }}">
     <h3>{{ page.title }}</h3>
   </header>
   <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
@@ -47,8 +46,7 @@ layout: default
     </div>
     <div class="mdl-layout-spacer"></div>
     <div>
-      <i class="material-icons" role="presentation">share</i>
-      <span class="visuallyhidden">share</span>
+      {% include shareSocialButton.html %}
     </div>
   </div>
   <article class="mdl-color-text--grey-700 mdl-card__supporting-text">
@@ -59,18 +57,18 @@ layout: default
 {% if next_post != null or previous_post != null %}
 <nav class="blog-pagination-nav mdl-cell mdl-cell--12-col">
   {% if previous_post != null %}
-  <a href="{{ previous_post.url | prepend: site.baseurl }}">
-    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon prev">
+  <a href="{{ previous_post.url | prepend: site.baseurl }}" class="prev">
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
       <i class="material-icons" role="presentation">arrow_backward</i>
     </button>
     {{ previous_post.title }}
   </a>
   {% endif %}
-  <div class="paginator-counter"> {{ current_lesson_index }}/{{ total_lessons_number }}</div>
+  <div class="paginator-counter"> {{ current_index }}/{{ total_lessons_number }}</div>
   {% if next_post != null %}
-  <a href="{{ next_post.url | prepend: site.baseurl }}">
+  <a href="{{ next_post.url | prepend: site.baseurl }}" class="next">
     {{ next_post.title }}
-    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon next">
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
       <i class="material-icons" role="presentation">arrow_forward</i>
     </button>
   </a>

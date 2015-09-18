@@ -16,7 +16,7 @@ body::before {
 }
 
 a {
-    color: rgb(35,173,156);
+    color: $default-link-color;
     text-decoration: none;
 }
 
@@ -53,8 +53,33 @@ a {
             }
             
             &:hover {
-                background: #18ffff;
+                background: $drawer-highlight-color;
             }
+        }
+    }
+}
+.mdl-menu.share {
+    min-width: 45px;
+
+    .mdl-menu__item {
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        width:25px;
+        height: 40px;
+        padding: 0 10px;
+
+        .mdi-facebook-box {
+            color: #3b5998;
+        }
+        .mdi-twitter-box {
+            color: #00aced;
+        }
+        .mdi-linkedin-box {
+            color: #007bb5;
+        }
+        .mdi-pinterest-box {
+            color: #cb2027;
         }
     }
 }
@@ -62,22 +87,30 @@ a {
 * Blog
 **/
 .main-container {
-    max-width: 1000px;
+    max-width: $content-width;
     padding: 50px 0;
     display: flex;
     width: 100%;
     margin: 0 auto;
     flex-shrink: 0;
 
-    .mdl-card__media {
-        box-sizing: border-box;
-        background-size: cover;
-        padding: 24px;
-        display: flex;
-        flex-grow: 1;
-        flex-direction: row;
-        align-items: flex-end;
-        cursor: pointer
+    .mdl-card {
+        overflow: visible;
+        &.mdl-cell {
+            .mdl-card__supporting-text {
+                flex: 1;
+            }
+        }
+        .mdl-card__media {
+            box-sizing: border-box;
+            background-size: cover;
+            padding: 24px;
+            display: flex;
+            flex-grow: 1;
+            flex-direction: row;
+            align-items: flex-end;
+            cursor: pointer
+        }
     }
 }
 .post {
@@ -97,7 +130,7 @@ a {
 
         &:last-child {
             flex-direction: column;
-            padding: 15px 70px;
+            padding: 15px 70px 60px;
             align-items: flex-start;
         }
     }
@@ -114,29 +147,36 @@ a {
 }
 .blog-pagination-nav {
     margin: 12px 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: #FFF;
+    color: $bottom-navigation-color;
     font-weight: 500;
     position: relative;
 
     a {
-        color: #FFF;
-        text-decoration: none
-    }
-
-    button {
-        background-color: #FFF;
-        color: rgba(0, 0, 0, 0.54);
+        display: flex;
+        align-items: center;
+        color: $bottom-navigation-color;
+        text-decoration: none;
 
         &.prev {
-            margin-right: 16px;
+            float: left;
+
+            button {
+                margin-right: 10px;
+            }
         }
 
         &.next {
-            margin-left: 16px;
+            float: right;
+
+            button {
+                margin-left: 10px;
+            }
+        }
+
+        button {
+            background-color: $bottom-navigation-color;
+            color: $bottom-navigation-shadow-color;
+
         }
     }
 
@@ -180,7 +220,7 @@ footer.mdl-mega-footer {
                         align-items: center;
 
                         &:hover {
-                            color: rgb(35,167,153);
+                            color: $footer-link-hover-color;
                         }
 
                         i {
@@ -223,7 +263,7 @@ footer.mdl-mega-footer {
                 color: inherit;
                 text-decoration: none;
                 padding: 4px;
-
+                font-size: 16px;
                 font-weight: 400;
             }
         }

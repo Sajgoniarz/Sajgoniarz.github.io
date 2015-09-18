@@ -3,6 +3,7 @@ layout: default
 ---
 
 {% for post in paginator.posts %}
+    {% assign current_index = forloop.index0 %}
     <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--4dp">
       <div class="mdl-card__title">
         <h2 class="mdl-card__title-text">
@@ -16,26 +17,24 @@ layout: default
         {{ post.date | date: "%-d.%m.%Y" }} {% if post.categories != empty %} w {{ post.categories | first }} {% endif %}
       </div>
       <div class="mdl-card__menu">
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">share</i>
-        </button>
+        {% include shareSocialButton.html %}
       </div>
     </div>
     {% endfor %}
     <nav class="blog-pagination-nav mdl-cell mdl-cell--12-col">
       {% if paginator.previous_page_path != null %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon prev">
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="prev">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
           <i class="material-icons" role="presentation">arrow_backward</i>
         </button>
-        Less
+        {% if site.translations.previous %}{{ site.translations.previous }}{% else %}Previous{% endif %}
       </a>
       {% endif %}
       <div class="paginator-counter"> {{ paginator.page }}/{{ paginator.total_pages }}</div>
       {% if paginator.next_page_path != null %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">
-        More
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon next">
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">
+        {% if site.translations.next %}{{ site.translations.next }}{% else %}Next{% endif %}
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
           <i class="material-icons" role="presentation">arrow_forward</i>
         </button>
       </a>

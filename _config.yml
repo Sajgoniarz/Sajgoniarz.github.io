@@ -1,23 +1,17 @@
 title: Code Hideout
 lang: pl
-email: Sajgoniarz1@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "localhost:4000" # the base hostname & protocol for your site
-twitter_username: Sajgoniarz
-author: Marek Naharnowicz
-github_username: Sajgoniarz
-github_avatar_link : https://avatars2.githubusercontent.com/u/2995236
-background: BG.png
 pagelist:
  - title: Blog
    icon: home
    link: /
  - title: Kursy
-   icon: book
+   icon: school
    link: /courses
  - title: O mnie
    icon: account_circle
@@ -26,20 +20,49 @@ pagelist:
 courses:
  - title: Jekyll
    category: jekyll
-   img: 3083652.png
-   list-bg-color: grey-800
-   list-icon-bg-color: yellow-700
+   img: 3083652.png # displayed inside lesson list
+   section-bg-color: grey-800
+   icon-bg-color: yellow-700
    list-font-color: grey-50
  - title: HTML5
    category: html
    img: html5logo.svg
-   list-bg-color: orange-800
-   list-icon-bg-color: yellow-400
+   section-bg-color: orange-800
+   icon-bg-color: yellow-400
    list-font-color: grey-50
-# Blog post config
-post-default-header-bg-color: blue-grey-800
-post-default-header-text-color: teal-300
+# Theme config
+avatar_link : https://avatars2.githubusercontent.com/u/2995236 # for drawer header
+background: BG.png # for whole site
+blog-header-bg-color: blue-grey-800 # MDL color class for header background in "blog" category posts
+blog-header-text-color: teal-300 #  MDL color class for header text in "blog" category posts
+# Pagination
 paginate: 6
 paginate_path: /:num/
+# Social
+social_info:
+   author: Marek Naharnowicz # display in drawer header and footer
+   email: Sajgoniarz1@gmail.com
+   twitter_link: https://twitter.com/Sajgoniarz
+   facebook_link: https://www.facebook.com/MarekNaharnowicz
+   linkedin_link: https://pl.linkedin.com/in/Sajgoniarz
+   github_link: https://github.com/Sajgoniarz
+translations:
+   author: Autor
+   next: Następna
+   previous: Poprzednia
+   my_profiles: Ja w Social Media
+   about: O Stronie
+   january: Styczeń
+   february: Luty
+   march: Marzec
+   april: Kwiecień
+   may: Maj
+   june: Czerwiec
+   july: Lipiec
+   august: Sierpień
+   september: Wrzesień
+   october: Październik
+   november: Listopad
+   december: Grudzień
 # Build settings
 markdown: kramdown
