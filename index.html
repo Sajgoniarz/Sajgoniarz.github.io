@@ -4,10 +4,13 @@ layout: default
 
 {% for post in paginator.posts %}
     {% assign current_index = forloop.index0 %}
-    <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--4dp">
+    <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--4dp post-card">
+      <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-js-ripple-effect">
+        <span class="mdl-ripple"></span>
+      </a>
       <div class="mdl-card__title">
         <h2 class="mdl-card__title-text">
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          {{ post.title }}
         </h2>
       </div>
       <div class="mdl-card__supporting-text">

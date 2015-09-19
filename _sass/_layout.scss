@@ -21,6 +21,17 @@ a {
 }
 
 /**
+* Header
+**/
+.mdl-layout__header {
+    .mdl-layout-title {
+        a {
+            color: #fff;
+            font-weight: 400;
+        }
+    }
+}
+/**
 * Drawer
 **/
 .mdl-layout__drawer {
@@ -109,11 +120,25 @@ a {
             flex-grow: 1;
             flex-direction: row;
             align-items: flex-end;
-            cursor: pointer
         }
     }
 }
-.post {
+.post-card {
+    h2{
+        color: $default-link-color;
+        font-weight: 500;
+    }
+
+    & > a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+.single-post {
 
     .mdl-card__supporting-text {
         width: 100%;

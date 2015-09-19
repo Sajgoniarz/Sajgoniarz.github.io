@@ -1,15 +1,26 @@
+{% if post.url %}
+    {% assign url = post.url %}
+    {% assign title = post.title %}
+{% else %}
+    {% assign url = page.url %}
+    {% assign title = page.title %}
+{% endif %}
+{% assign url = url | prepend: site.url %}
+<script>
+    console.log("{{ url }}");
+</script>
 <button id="share-post{{ current_index }}" class="mdl-button mdl-js-button mdl-button--icon">
     <i class="material-icons">share</i>
 </button>
 <ul class="mdl-menu share mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="share-post{{ current_index }}">
     <li class="mdl-menu__item">
-        <a href="#"><i class=" mdi mdi-facebook-box"></i></a>
+        <a href="http://www.facebook.com/sharer/sharer.php?u={{ url }}&title={{ title }}" rel="nofollow" target="_blank" ><i class=" mdi mdi-facebook-box"></i></a>
     </li>
     <li class="mdl-menu__item">
         <a href="#"><i class=" mdi mdi-twitter-box"></i></a>
     </li>
     <li class="mdl-menu__item">
-        <a href="#"><i class=" mdi mdi-linkedin-box"></i></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url }}&title={{ title }}{% if post %}&summary={{ post.content | truncate: 256 | strip_html }}{% endif %}&source={{ site.url }}" rel="nofollow" target="_blank"><i class=" mdi mdi-linkedin-box"></i></a>
     </li>
     <li class="mdl-menu__item">
         <a href="#"><i class=" mdi mdi-pinterest-box"></i></a>

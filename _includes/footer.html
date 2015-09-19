@@ -6,7 +6,7 @@
       <h1 class="mdl-mega-footer__heading">{% if site.translations.author %}{{ site.translations.author }}{% else %} Author {% endif %}</h1>
       <ul class="mdl-mega-footer__link-list">
         <li><span>{{ site.social_info.author }}</span></li>
-        <li><a href="mailto:{{ site.email }}">{{ site.social_info.email }}</a></li>
+        <li><a href="mailto:{{ site.social_info.email }}">{{ site.social_info.email }}</a></li>
         <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe via RSS</a></li>
         <li><span>@2015 {{ site.title }}</span></li>
       </ul>
