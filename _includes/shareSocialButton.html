@@ -17,15 +17,15 @@
         <a href="http://www.facebook.com/sharer/sharer.php?u={{ url }}&title={{ title }}" rel="nofollow" target="_blank" ><i class="mdi mdi-facebook-box"></i></a>
     </li>
     <li class="mdl-menu__item">
-        <a href="http://twitter.com/share?text={{ title }}&url={{ url }}&via={{ site.social_info.twitter_link | split: '/' | last }}"><i class="mdi mdi-twitter-box"></i></a>
+        <a href="http://twitter.com/share?text={{ title }}&url={{ url }}&via={{ site.social_info.twitter_link | split: '/' | last }}" rel="nofollow" target="_blank"><i class="mdi mdi-twitter-box"></i></a>
     </li>
     <li class="mdl-menu__item">
         <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url }}&title={{ title }}{% if post %}&summary={{ post.content | truncate: 256 | strip_html }}{% endif %}&source={{ site.url }}" rel="nofollow" target="_blank"><i class=" mdi mdi-linkedin-box"></i></a>
     </li>
     <li class="mdl-menu__item">
-        <a href="https://plus.google.com/share?url={{ url }}"><i class="mdi mdi-google-plus-box"></i></a>
+        <a href="https://plus.google.com/share?url={{ url }}" rel="nofollow" target="_blank"><i class="mdi mdi-google-plus-box"></i></a>
     </li>
     <li class="mdl-menu__item">
-        <a href="http://pinterest.com/pin/create/button/?url={{ url }}&description={{ title }}"><i class="mdi mdi-pinterest-box"></i></a>
+        <a href="http://pinterest.com/pin/create/button/?url={{ url }}&description={{ title }}" rel="nofollow" target="_blank"><i class="mdi mdi-pinterest-box"></i></a>
     </li>
 </ul>
