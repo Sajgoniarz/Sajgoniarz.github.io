@@ -23,14 +23,13 @@
 {% endif %}
 {% if page.image %}
 <meta content="{{ site.url }}/images/post/{{ page.image }}" property="og:image">
-{% else %}
+{% endif %}
 <meta content="{{ site.url }}/images/LinkedInLogo.png" property="og:image">
 <meta content="180" property="og:width">
 <meta content="110" property="og:height">
 <meta content="{{ site.url }}/images/FacebookLogo.png" property="og:image">
 <meta content="600" property="og:width">
 <meta content="600" property="og:height">
-{% endif %}
 {% if page.categories %}
 {% for category in page.categories limit:1 %}
 <meta content="{{ category }}" property="article:section">
