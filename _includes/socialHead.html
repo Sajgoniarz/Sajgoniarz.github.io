@@ -22,12 +22,12 @@
 <meta content="{{ site.url }}/about/" property="article:author">
 {% endif %}
 {% if page.image %}
-<meta content="/images/post/{{ page.image }}" property="og:image">
+<meta content="{{ site.url }}/images/post/{{ page.image }}" property="og:image">
 {% else %}
-<meta content="/images/LinkedInLogo.png" property="og:image">
+<meta content="{{ site.url }}/images/LinkedInLogo.png" property="og:image">
 <meta content="180" property="og:width">
 <meta content="110" property="og:height">
-<meta content="/images/FacebookLogo.png" property="og:image">
+<meta content="{{ site.url }}/images/FacebookLogo.png" property="og:image">
 <meta content="600" property="og:width">
 <meta content="600" property="og:height">
 {% endif %}
