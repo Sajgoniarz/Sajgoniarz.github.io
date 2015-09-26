@@ -19,18 +19,24 @@ pagelist:
    link: /about
 # Courses list & config
 courses:
- - title: Jekyll
-   category: jekyll
-   img: 3083652.png # displayed inside lesson list
-   section-bg-color: grey-800
-   icon-bg-color: yellow-700
+ - title: C#
+   category: cs
+   img: csharp.png
+   section-bg-color: deep-purple-700
+   icon-bg-color: purple-300
    list-font-color: grey-50
- - title: HTML5
-   category: html
-   img: html5logo.svg
-   section-bg-color: orange-800
-   icon-bg-color: yellow-400
-   list-font-color: grey-50
+# - title: Jekyll
+#   category: jekyll
+#   img: 3083652.png # displayed inside lesson list
+#   section-bg-color: grey-800
+#   icon-bg-color: yellow-700
+#   list-font-color: grey-50
+# - title: HTML5
+#   category: html
+#   img: html5logo.svg
+#   section-bg-color: orange-800
+#   icon-bg-color: yellow-400
+#   list-font-color: grey-50
 # Theme config
 avatar_link : https://avatars2.githubusercontent.com/u/2995236 # for drawer header
 background: BG.png # for whole site

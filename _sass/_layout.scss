@@ -20,13 +20,18 @@ a {
     text-decoration: none;
 }
 
+h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
 /**
 * Header
 **/
 .mdl-layout__header {
     .mdl-layout-title {
         a {
-            color: #fff;
+            color: $title-color;
             font-weight: 400;
         }
     }
@@ -110,6 +115,7 @@ a {
 
     .mdl-card {
         overflow: visible;
+        z-index: 0;
         &.mdl-cell {
             .mdl-card__supporting-text {
                 flex: 1;
@@ -160,6 +166,12 @@ a {
             flex-direction: column;
             padding: 15px 70px 60px;
             align-items: flex-start;
+
+            @media screen and (max-width: 480px) {
+                & {
+                    padding: 15px 30px 60px;
+                }
+            }
         }
     }
 
@@ -295,5 +307,11 @@ footer.mdl-mega-footer {
                 font-weight: 400;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .mdl-layout__drawer-button {
+        color: $title-color;
     }
 }
