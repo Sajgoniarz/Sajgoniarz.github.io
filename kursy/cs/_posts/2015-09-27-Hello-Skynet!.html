@@ -1,9 +1,9 @@
 ---
 layout: post
-title : Witaj Skynet!
+title: Witaj Skynet!
 date: 2015-09-27 20:05
 indeks: 2
-description : Po wstępie, nadszedł czas by napisać nasz pierwszy program, poznać strukturę programów tworzonych w C# oraz liznąć trochę teorii programowania.
+description: Po wstępie, nadszedł czas by napisać nasz pierwszy program, poznać strukturę programów tworzonych w C# oraz liznąć trochę teorii programowania.
 ---
 
 <h2>Tworzymy nasz pierwszy projekt.</h2>
@@ -17,7 +17,7 @@ Gdy już się uporasz z tym procesem, pora uruchomić nasze IDE, napisać swój 
     <li><span>U dołu okna w polu <strong>Name</strong> wpisz "Skynet".</span></li>
     <li><span>W polu <strong>Location</strong> wybierz folder, w którym chcesz przechowywać programy z tego kursu.</span></li>
     <li><span>Upenij się że checkbox <strong>Create directory for solution</strong> jest zaznaczone.</span></li>
-    <li><span>Kliklamy <strong>Ok</strong>.</span></li>
+    <li><span>Klikamy <strong>Ok</strong>.</span></li>
 </ol>
 <p>
     Po chwili otworzy sie nam okno edytora, gdzie<strong> wpisujemy </strong> (Tak, wpisujemy, od kopiuj-wklej jeszcze nikt niczego się nie nauczył.) kod naszego pierwszego programu :
@@ -78,7 +78,7 @@ namespace Skynet
 </p>
 <h4>Metody</h4>
 <p>
-    Są to wykonywalne fragmenty klas, których użycie prowadzi do zmiany stanu obiektu, na którym została wywołana. Teraz rozłożmy nieco naszego main'a, który jest naszą pierwszą oraz <strong>najważniejszą</strong> metodą, lecz najpierw przypomnijmy sobie jak wyglądał :
+    Są to wykonywalne fragmenty klas, których użycie prowadzi do zmiany stanu obiektu, na którym została wywołana. Teraz rozłożmy nieco naszego main'a, który jest naszą pierwszą oraz <strong>najważniejszą</strong> metodą, lecz najpierw przypomnijmy sobie jak wyglądał:
 </p>
 {% highlight csharp %}
 static void Main(string[] args)
@@ -94,14 +94,14 @@ static void Main(string[] args)
     <li><span><strong>void</strong> - Każda metoda musi być poprzedzona nazwą typu danych, dzięki czemu komputer będzie wiedział jakiego typu będą dane, które będzie musiał obsłużyć po jej wykonaniu.
             Jest to jedno z wymagań języka "typo-bezpiecznego". Typ <strong>void</strong>(ang. pusty) oznacza, że nasza metoda nie generuje żadnych danych.</span></li>
     <li><span><strong>Main</strong> - Nazwa naszej specjalnej metody będąca zarazem słowem kluczowym. Nazwy pozwalają nam zidentyfikować metodę, co umożliwia łatwe jej wywołanie.
-            Dodatkowo <strong>main</strong> jest nazwą zastrzeżoną i stanowi <strong> główą metodę w programie</strong>. Jest to miejsce z której nasz komputer uruchamia program.</span></li>
-    <li><span><strong>(string[] args)</strong> - Po nazwie znajdziemy jej<strong>Parametry</strong>. Służą one do przekazywania do jej <strong>ciała</strong> danych, na których ma pracować.
+            Dodatkowo <strong>main</strong> jest nazwą zastrzeżoną i stanowi <strong> główną metodę w programie</strong>. Jest to miejsce z której nasz komputer uruchamia program.</span></li>
+    <li><span><strong>(string[] args)</strong> - Po nazwie znajdziemy jej <strong>Parametry</strong>. Służą one do przekazywania do jej <strong>ciała</strong> danych, na których ma pracować.
             Podczas określania właściwości parametru nalezy podać jego typ, w naszym wypadku jest to string (a dokładnie tablica stringów), oraz nazwę, której będziemy uzywać w metodzie,by odowałać się do danych</span></li>
     <li><strong>{ ... }</strong> - nawiasy klamrowe służą do określenia granic metody.</li>
 </ol>
 <h3>Ciało metody</h3>
 <p>
-    Uff, po długiej podróży udało nam się dotrzeć do samego serca naszego programu, czyli do ciała metody main, które wyglądało tak :
+    Uff, po długiej podróży udało nam się dotrzeć do samego serca naszego programu, czyli do ciała metody main, które wyglądało tak:
 </p>
 {% highlight csharp %}
 string name;
@@ -116,10 +116,10 @@ WriteLine("Miło mi Cię poznać " + name + ", jestem Skynet.");
     <li>Dokonujemy <strong>definicji</strong> zmiennej o nazwie "name" typu string. W ten sposób mówimy kompilatorowi, że Skynet będzie używał zmiennej o indetyfikatorze "name" oraz żeby zarezerował na nią ilośc pamięci stosowną do typu string, który umożliwai przechowywanie ciągów znaków, zamniętych w podwójnym cudzysłowiu.</li>
     <li>Wywołujemy WriteLine, która wyświetla w konsoli tekst podany jako jej parametr. Jest to podstawowy sposób przekazywania informacji człowiekowi przez komputer.</li>
     <li>Teraz Skynet za pomocą metody ReadLine oraz <strong>operatora przypisania</strong> (=) zapamięta nasze imię w zmiennej "name". </li>
-    <li>W ostatnim kroku przywita się z nami znowu wyświetlając nam tekst, jednak zanim to zrobi dokona <strong>konkatynacji</strong>, czyli dodania do siebie dwóch fragmentów zdania, oraz zmiennej "name" za pomocą operatora <strong>+</strong></li>
+    <li>W ostatnim kroku przywita się z nami znowu wyświetlając nam tekst, jednak zanim to zrobi dokona <strong>konkatenacji</strong>, czyli dodania do siebie dwóch fragmentów zdania, oraz zmiennej "name" za pomocą operatora <strong>+</strong></li>
 </ol>
 <p>
-    Warto zwrócić uwagę, że wywołanie metod ReadLine, oraz WriteLine nie byłoby możliwe, gdyby nie były to <strong>metody statyczne</strong>, oraz że każda operacja w ciele musi być oddzielona średnikiem (ang. semicolon)
+    Warto zwrócić uwagę, że wywołanie metod ReadLine, oraz WriteLine nie byłoby możliwe, gdyby nie były to <strong>metody statyczne</strong>, oraz że każda operacja w ciele musi być oddzielona średnikiem (ang. semicolon).
 </p>
 <h3>Podsumowanie</h3>
 <p>Wreszcie udało się wam przebrnąć przez tą długą i trudną dla początkujących lekcję nafaszerowaną teorią. Dobrze będzie abyście przystąpili do następnej lekcji dopiero gdy przyswoicie sobie użyte terminy, ponieważ będę z nich notorycznie korzystał w następnych lekcjach, które będa już (mam nadzieję ;p) łatwiejsze. Teraz czas na parę pytań w ramach przypomnienia: </p>
