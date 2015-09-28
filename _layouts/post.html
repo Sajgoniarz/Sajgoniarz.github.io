@@ -15,7 +15,7 @@ layout: default
 
   {% for category in site.categories %}
     {% if category[0] == page.categories[1] %}
-      {% assign ordered_posts = category[1] | sort: "index" %}
+      {% assign ordered_posts = category[1] | sort: index %}
       {% for post in ordered_posts %}
         {% if post.title == page.title %}
           {% assign current_index = forloop.index %}

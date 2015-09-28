@@ -14,7 +14,7 @@ layout: default
         </h2>
       </div>
       <div class="mdl-card__supporting-text">
-        {{ post.content | truncate: 160 }}
+        {{ post.content | truncate: 260 | strip_html }}
       </div>
       <div class="mdl-card__actions mdl-card--border">
         {{ post.date | date: "%-d.%m.%Y" }} {% if post.categories != empty %} w {{ post.categories | first }} {% endif %}

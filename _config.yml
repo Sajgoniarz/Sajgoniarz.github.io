@@ -73,3 +73,4 @@ translations:
    december: Grudzień
 # Build settings
 markdown: kramdown
+excerpt_separator: ''
