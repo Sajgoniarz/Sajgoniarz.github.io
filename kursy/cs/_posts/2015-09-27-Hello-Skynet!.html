@@ -22,12 +22,13 @@ Gdy już się uporasz z tym procesem, pora uruchomić nasze IDE, napisać swój 
 <p>
     Po chwili otworzy sie nam okno edytora, gdzie<strong> wpisujemy </strong> (Tak, wpisujemy, od kopiuj-wklej jeszcze nikt niczego się nie nauczył.) kod naszego pierwszego programu :
 </p>
-{% highlight csharp %}
+<pre>
+    <code class="language-csharp">
 using static System.Console;
 
 namespace Skynet
 {
-    class Program 
+    class Program
     {
         static void Main(string[] args)
         {
@@ -38,7 +39,9 @@ namespace Skynet
         }
     }
 }
-{% endhighlight %}
+    </code>
+</pre>
+
 <p>
     Teraz, aby skompilować i uruchomić program, który będzie odpowiedzialny za zniszczenie ludzkości, wystarczy nacisnąć <strong>Ctrl + F5</strong>.
     Dzięki tej kombinacji uruchomimy naszą aplikację <strong>poza</strong> środowiskiem Visual Studio, dzięki czemu zobaczymy jak będzie się zachowywać po normalnym uruchomieniu,
@@ -53,9 +56,11 @@ namespace Skynet
     Użycie naszej pozwala nam na wywoływanie <strong>metod</strong> oraz używania <strong>typów</strong> znajdującyć się w <strong>przestrzeni nazw</strong>, którą napisaliśmy po tym słowie.
     Gdybyśmy nie użyli tej dyrektywy wywołanie metody WriteLine wyglądałoby tak :
 </p>
-{% highlight csharp %}
-    System.Console.WriteLine("Witaj, jak masz na imię?");
-{% endhighlight %}
+<pre>
+    <code class="language-csharp">
+System.Console.WriteLine("Witaj, jak masz na imię?");
+    </code>
+</pre>
 <p>
     Jeżeli kompilator byłby człowiekiem moglibyśmy mu powiedzieć "Hej, kolego. Jeżeli przy wywołaniu metody nie zobaczysz jej przestrzeni nazw poszukaj jej w System.Console".
     Część z was pewnie zwróciła uwagę, że nie opisałem dlaczego zostało użyte słówko <strong>static</strong>, opisze to nieco niżej.
@@ -80,12 +85,15 @@ namespace Skynet
 <p>
     Są to wykonywalne fragmenty klas, których użycie prowadzi do zmiany stanu obiektu, na którym została wywołana. Teraz rozłożmy nieco naszego main'a, który jest naszą pierwszą oraz <strong>najważniejszą</strong> metodą, lecz najpierw przypomnijmy sobie jak wyglądał :
 </p>
-{% highlight csharp %}
+<pre>
+    <code class="language-csharp">
 static void Main(string[] args)
 {
-    ...
+ ...
 }
-{% endhighlight %}
+    </code>
+</pre>
+
 <p>
     Zatem do rzeczy :
 </p>
@@ -103,12 +111,14 @@ static void Main(string[] args)
 <p>
     Uff, po długiej podróży udało nam się dotrzeć do samego serca naszego programu, czyli do ciała metody main, które wyglądało tak :
 </p>
-{% highlight csharp %}
+<pre>
+    <code class="language-csharp">
 string name;
 WriteLine("Witaj, jak masz na imię?");
 name = ReadLine();
 WriteLine("Miło mi Cię poznać " + name + ", jestem Skynet.");
-{% endhighlight %}
+    </code>
+</pre>
 <p>
     Teraz zobaczymy co się stało w poszczególych linijkach :
 </p>

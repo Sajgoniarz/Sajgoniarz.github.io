@@ -23,7 +23,7 @@ courses:
    category: cs
    img: csharp.png
    section-bg-color: deep-purple-700
-   icon-bg-color: purple-300
+   icon-bg-color: grey-50
    list-font-color: grey-50
 # - title: Jekyll
 #   category: jekyll
