@@ -37,7 +37,7 @@ layout: default
 <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col single-post">
 
   <header class="mdl-card__media mdl-color-text--{{ font_color }} mdl-color--{{ bg_color }}">
-    <h2>{{ page.title }}</h2>
+    <h1>{{ page.title }}</h1>
   </header>
   <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
     <div>
@@ -73,4 +73,20 @@ layout: default
   </a>
   {% endif %}
 </nav>
+{% endif %}
+
+{% if page.comments %}
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES * * */
+  var disqus_shortname = 'codehidout';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endif %}

@@ -1,0 +1,194 @@
+---
+layout: post
+title: "Podstawowe typy danych"
+date: 2015-10-18 12:28
+index: 3
+description: W dziejszej lekcji poznacie podstawowe typ danych jakie oferuje nam C#, dowiecie się jak je konwertować pomiędzy sobą, oraz czym się różni rzutowanie jawne, od niejawnego.
+---
+
+<h2>Wprowadzenie</h2>
+<p>
+    Pamiętacie nasz program Skynet? W pewnym momencie poprosił on was o podanie imienia, które musiał gdzieś przechować. Tym czymś była pamięć komputera.
+    Nasze imię było ciągiem znaków, więc aby je przechować powiedzieliśmy kompilatorowi, żeby zapamiętał je jako <strong>string</strong> poprzez określenie
+    <strong>Typu</strong> danych przed zmienną o identyfikatorze "name".
+    Co jednak gdy będzięmy chcięli sprawić żeby nasz Skynet na prawdę zawładnął światem? Przecież do tego celu będzie potrzebował ogromnej ilości danych,
+    a przecież nie wszystkie są stringiem! Żeby to zobaczyć, wystarczy że rozejrzysz się wokół. Muzyka z Twoich słuchawek nie jest stringiem,
+    a przekątna monitora na który patrzysz jest wyrażana w calach. Tak więc by przechować dane różnego rodzaju, każdy język typowany, w tym nasz C#, posiada
+    wbudowane <strong>Typy danych</strong>, które określają jak komputer przechowywuje konretne informacje w swojej pamięci oraz jakie wartości moga przyjmować.
+</p>
+<h2>Podział</h2>
+<p>
+    Jak wyżej wspomniałem nasz Skynet potrzebuje wiele rodzaji typów danych, zatem w tym celach organizacyjnych został stworzony ogólny podział typów danych, który przestawię jak drzewo.
+</p>
+<ul>
+    <li><strong>Referencyjne</strong> - Jest to rodzina typów której wartości nie są jej bezpośrednimi przedstawicielami, lecz przechowują <strong>adres w pamięci</strong> pod którym znajduje się nasza zmienna. Typy te sprawia niejednemu początkującemu programiście niemałe problemy :)
+        <ul>
+            <li><strong>Obiektowe</strong> - Typy, których składnikami są właściwości i metody. </li>
+            <li><strong>String</strong> - Już wspominany wielokrotnie typ służący do przechowywania ciągów znaków.</li>
+        </ul>
+    </li>
+    <li><strong>Wartościowe</strong> - Przechowywująkonretne wartości, a nie odwołania do nich.
+        <ul>
+            <li><strong>Wyliczeniowe</strong> - Typy danych, bez których ciężko byłoby się obejśc. Mogą przyjmować wartość z uprzednio zdefiniowanego zbioru. (np. kolor z katalogu). </li>
+            <li><Strong>Strukturalne</Strong> - Kuzyn klasy. O różnicach pomiędzy tymi dwoma typami napisze przy wprowadzeniu do obiektowości.
+                <ul>
+                    <li><strong>Proste</strong>
+                        <ul>
+                            <li><strong>Numeryczne</strong> - Przechowują różnorodne zakresy liczb. </li>
+                            <li><strong>Typ Logiczny</strong> - w tej loży znajduję się bardzo samotny typ. Co ja piszę... on nie ma uczuć.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<h2>Charakterystyka</h2>
+<table class="mdl-data-table mdl-js-data-table">
+    <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Klasa</th>
+            <th>Zajętość pamięcu (bajty)</th>
+            <th>Zakres</th>
+            <th>Domyślna Wartość</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>bool</td>
+            <td>Boolean</td>
+            <td>1 bez znaku</td>
+            <td>True lub False</td>
+            <td>False</td>
+        </tr>
+        <tr>
+            <td>byte</td>
+            <td>Byte</td>
+            <td>1 bez znaku</td>
+            <td>0 do 255</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>sbyte</td>
+            <td>SByte</td>
+            <td>1 ze znakiem</td>
+            <td>-128 do 127</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>short</td>
+            <td>Int16</td>
+            <td>2 ze znakiem</td>
+            <td>-32.768 do 32.767</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>ushort</td>
+            <td>UInt16</td>
+            <td>2 bez znaku</td>
+            <td>0 do 65.635</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>int</td>
+            <td>Int32</td>
+            <td>4 ze znakiem</td>
+            <td>-2.147.483.648 do 2.147.483.647</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>uint</td>
+            <td>UInt32</td>
+            <td>4 bez znaku</td>
+            <td>0 do 4.294.967.295</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>long</td>
+            <td>Int64</td>
+            <td>8 ze znakiem</td>
+            <td>–9.223.372.036.854.775.808 </br> do
+                9.223.372.036.854.775.807</td>
+            <td>0L</td>
+        </tr>
+        <tr>
+            <td>ulong</td>
+            <td>UInt64</td>
+            <td>8 bez znaku</td>
+            <td>0 do 18.446.744.073.709.551.615</td>
+            <td>0L</td>
+        </tr>
+        <tr>
+            <td>float</td>
+            <td>Single</td>
+            <td>4 zmiennoprzecinkowe, </br> 7 cyfr znaczących</td>
+            <td>-3.4×10^38 to +3.4×10^38</td>
+            <td>0.0F</td>
+        </tr>
+        <tr>
+            <td>double</td>
+            <td>Double</td>
+            <td>8 zmiennoprzecinkowe, </br> 15 cyfr znaczących</td>
+            <td>±5.0 × 10^−324 do ±1.7 × 10^308</td>
+            <td>0.00</td>
+        </tr>
+        <tr>
+            <td>decimal</td>
+            <td>Decimal</td>
+            <td>16, 28 cyfr znaczących</td>
+            <td>-7.9 × 10^28 do 7.9 x 10^28</td>
+            <td>0.0M</td>
+        </tr>
+        <tr>
+            <td>char</td>
+            <td>Char</td>
+            <td>2 unicode</td>
+            <td>U+0000 do U+FFFF</td>
+            <td>'\0'</td>
+        </tr>
+        <tr>
+            <td>string</td>
+            <td>String</td>
+            <td>1</td>
+            <td>Text</td>
+            <td>2n + 20</td>
+        </tr>
+    </tbody>
+</table>
+<h4>Uwagi</h4>
+<p>
+    Zapewne niektórzy z was mogą nie rozumieć kilku rzeczy po przeczytaniu tabelki, zatem je wytłumaczę :
+    <ol>
+        <li><strong>Dlaczego piszę ze lub bez znaku?</strong>
+            Dla czystej formalności. Bez wdawania się w szczeguły <a href="http://apollo.astro.amu.edu.pl/PAD/index.php?n=Dybol.DydaktykaBinaria1">pozycyjnego zapisu liczb</a>
+            Liczby takie są przechowywane w pamięci komputera w różny sposób.
+        </li>
+        <li><strong>Czym jest cyfra znacząca?</strong>
+            Zapewne znacie problem z zapisem niektórych liczb w postaci dziesiętnej jak np. 1/3. Możecie zapisać to jako 0,(3), ale... to nigdy nie będzie 1/3!
+            W komputerze jest dokładnie tak samo. Są liczby, których nie da się zapisać w systemie binarnym np. 0,6 (czyli tym z którym mamy doczynienia w komputerze),
+            więc jedyne co możemy zrobić to zapisać je z pewną dokładnością. Cyfry znaczące, właśnie mówią nam ilu cyfr możemy być pewni w danym zapisie. Reszta
+            z nich będzie tylko przybliżeniem. W praktyce oznacza to, że jeżeli wymyślimy dwa działania, których wynik będzie ten sam, to ich rezultaty uzyskane przez komputer mogą być różne!
+        </li>
+        <li>
+            <strong>Czym jest Unicode?</strong>
+            Jest to sposób kodowania znaków, którego celem jest zapis wszystkich pism używanych na świecie. Gdy piszę ten kurs w plikach używam właśnie kodowania Unicode,
+            po to by "nie ucikły" mi nasze narodowe ogonki. Amerykanie stworzyli własny standard zapisu swoich znaków zwany ASCII. Jeżeli w tym standardzie zapiszesz
+            zdanie "Jestem programistą" to komputer nie będzie wiedział czym jest "ą" i po otworzeniu tego dokumentu w miejscu "ą" najpewniej zobaczymy tzw. "krzaczek"
+        </li>
+        <li>
+            <strong>Co to za L, F itd. przy domyślnej wartości?</strong>
+            Te oznaczanie mówią kompilatorowi jakiego typu jest dana wartość. Jeżeli do np. float przypiszemy 0, to nie wyświetli się nam żaden komunikat, jeżeli jednak
+            zechcemy przypisać wartość np. 0.04 do typu float wyświetli się nam błąd dotyczący konwersji. Sposobem na pozybcie się go będzie dopisanie F na koniec liczby,
+            dzięki czemu poinformujemy w ten sposób kompilator, że wartość ta jest typu float.
+        </li>
+    </ol>
+</p>
+<h2>Podsumowanie</h2>
+<p>
+    Warto mniej więcej zapamiętać zakresy w których operują poszczególne typy, ponieważ orientacja w nich pozwoli nam na znacznie lepsze dobieranie typów danych
+    do wartości, które chcemy przechowywać. Taka wiedza pozwoli nam na znacznie lepszą <strong>redukcję pamięci</strong> wykorzystywaną przez nasze programy. Jeszcze w żadnej książce, które czytałem, a
+    które były przeznaczone dla początkujących programistów nie spotkałem się, by w części opisującą strukturę służacą do sterowania przepływem programu zwaną pętlą
+    (która pozwala nam na wielokrotne wykonywanie sekwencji tych samych poleceń) były użyte "dobre" typy. Mając na myśli "dobre" chodzi mi np. o nie stosowanie typu int w pętli,
+    w której chcemy wyświetlić liczby z przedziału od 0 do 100. W tym wypadku spokojnie zmieścimy się w zakresie byte.
+</p>

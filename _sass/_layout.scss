@@ -179,6 +179,10 @@ h3 {
         font-size: 14px;
         line-height: 26px;
     }
+
+    table.mdl-data-table {
+        min-width: 100%;
+    }
 }
 .mdl-card__actions {
     padding: 10px;
